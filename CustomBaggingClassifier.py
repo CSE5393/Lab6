@@ -27,11 +27,6 @@ class CustomBaggingClassifier(BaseEstimator, ClassifierMixin):
         self.sample_ys_ = []
         self.sample_yhats_ = []
 
-        self.conf = []
-        self.roc = []
-        self.auc = []
-        self.cost = []
-
     def _bag_indexes(self, x, y):
         np.random.seed()
         aug_matrix = np.hstack([x, y.reshape((len(y), 1))])
